@@ -8,12 +8,12 @@
     <style>
         :root {
             --dark-blue: #1d2b32;
-            --light-purple: #e0d9eb;
-            --lavender: #d7d1e0; /* New light purple color from image */
+            --light-purple: #dbd3e7; /* Updated with exact color from image */
             --orange: #f47b42;
             --pink: #ffcbcd;
             --teal: #6b9996;
             --light-gray: #f2f2f2;
+            --sidebar-bg: #dbd3e7; /* Using the light purple for sidebar */
         }
         
         * {
@@ -35,8 +35,8 @@
         }
         
         .sidebar {
-            background-color: var(--dark-blue);
-            color: white;
+            background-color: var(--sidebar-bg);
+            color: #333;
             padding: 2rem 1rem;
         }
         
@@ -63,11 +63,11 @@
         }
         
         .nav-item:hover, .nav-item.active {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.1);
         }
         
         .nav-item.active {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(0, 0, 0, 0.15);
         }
         
         .nav-icon {
@@ -105,11 +105,12 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: var(--light-purple);
+            background-color: var(--dark-blue);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
+            color: white;
         }
         
         .metrics-row {
@@ -185,7 +186,7 @@
         }
         
         .chart-action.active {
-            background-color: var(--pink);
+            background-color: var(--light-purple);
             font-weight: 500;
         }
         
@@ -274,7 +275,7 @@
         }
         
         .market-stat:nth-child(2) {
-            background-color: var(--lavender); /* Changed from pink to lavender */
+            background-color: var(--light-purple); /* Using exact light purple from image */
         }
         
         .market-stat:nth-child(3) {
@@ -794,7 +795,7 @@
                     {
                         label: 'After Retrofits',
                         data: [85, 90, 80, 85, 75],
-                        backgroundColor: '#d7d1e0' // Using the new lavender color
+                        backgroundColor: '#dbd3e7' // Using the exact light purple color
                     }
                 ]
             },
@@ -824,7 +825,7 @@
                     data: [1.2, 0.5, 0.8, 0.4, 0.3],
                     backgroundColor: [
                         '#f47b42',
-                        '#d7d1e0', // Using the new lavender color
+                        '#dbd3e7', // Using the exact light purple color
                         '#6b9996',
                         '#f2f2f2',
                         '#1d2b32'
