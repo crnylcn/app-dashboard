@@ -544,7 +544,7 @@
             <div class="grid-layout">
                 <div class="chart-container">
                     <div class="chart-header">
-                        <div class="chart-title">Sustainability Performance</div>
+                        <div class="chart-title">ROI Comparison</div>
                     </div>
                     <div class="chart-wrapper">
                         <canvas id="sustainabilityChart"></canvas>
@@ -775,27 +775,22 @@
             }
         });
 
-        // Sustainability Performance Chart
+        // ROI Comparison Chart (replacing Sustainability Performance)
         const sustainabilityCtx = document.getElementById('sustainabilityChart').getContext('2d');
         const sustainabilityChart = new Chart(sustainabilityCtx, {
             type: 'bar',
             data: {
-                labels: ['Energy Efficiency', 'Water Usage', 'Carbon Emissions', 'Waste Management', 'Renewable Energy'],
+                labels: ['Riverside Tower', 'Parkview Complex', 'Westside Center', 'Harbor Point', 'Downtown Office'],
                 datasets: [
                     {
-                        label: 'Current Performance',
-                        data: [65, 70, 55, 75, 30],
+                        label: 'Current IRR (%)',
+                        data: [5.2, 4.8, 6.1, 5.5, 4.9],
                         backgroundColor: '#f47b42'
                     },
                     {
-                        label: 'Industry Benchmark',
-                        data: [75, 80, 70, 80, 60],
-                        backgroundColor: '#6b9996'
-                    },
-                    {
-                        label: 'After Retrofits',
-                        data: [85, 90, 80, 85, 75],
-                        backgroundColor: '#cabfda' // Using updated light purple color
+                        label: 'Post-Retrofit IRR (%)',
+                        data: [12.8, 11.2, 13.5, 14.2, 10.8],
+                        backgroundColor: '#cabfda'
                     }
                 ]
             },
@@ -805,11 +800,28 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        max: 100,
                         title: {
                             display: true,
-                            text: 'Performance Score'
+                            text: 'Internal Rate of Return (%)'
                         }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Properties'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    },
+                    legend: {
+                        position: 'top',
                     }
                 }
             }
